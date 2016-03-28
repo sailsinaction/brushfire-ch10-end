@@ -28,6 +28,33 @@ module.exports.policies = {
 
   // '*': true,
 
+  VideoController: {    
+    create: ['isLoggedIn']  
+  },
+
+  UserController: {
+    login: ['isLoggedOut'],
+    logout: ['isLoggedIn'],
+    removeProfile: ['isLoggedIn'],
+    updateProfile: ['isLoggedIn'], 
+    restoreGravatarURL: ['isLoggedIn'],
+    changePassword: ['isLoggedIn'],
+    signup: ['isLoggedOut'],
+    restoreProfile: ['isLoggedOut'],
+    adminUsers: ['isLoggedIn', 'isAdmin'], 
+    updateAdmin: ['isLoggedIn', 'isAdmin'],
+    updateBanned: ['isLoggedIn', 'isAdmin'],
+    updateDeleted: ['isLoggedIn', 'isAdmin']
+  },
+
+  PageController: {
+    showSignupPage: ['isLoggedOut'],
+    showAdminPage: ['isLoggedIn', 'isAdmin'],
+    showProfilePage: ['isLoggedIn'],
+    showEditProfilePage: ['isLoggedIn'],
+    showRestorePage: ['isLoggedOut']
+  }
+
   /***************************************************************************
   *                                                                          *
   * Here's an example of mapping some policies to run before a controller    *
