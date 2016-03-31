@@ -9,7 +9,7 @@ module.exports.routes = {
   'GET /video': 'VideoController.find',
   'POST /video': 'VideoController.create',
   'POST /user/signup': 'UserController.signup',
-  'PUT /user/removeProfile/': 'UserController.removeProfile',
+  'PUT /user/removeProfile': 'UserController.removeProfile',
   'PUT /user/restoreProfile': 'UserController.restoreProfile',
   'PUT /user/restoreGravatarURL': 'UserController.restoreGravatarURL',
   'PUT /user/updateProfile/:id': 'UserController.updateProfile',
